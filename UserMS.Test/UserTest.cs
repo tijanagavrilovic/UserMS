@@ -41,20 +41,5 @@ namespace UserMS.Test
             UserDB.CreateUser(testUser);
             Assert.AreEqual(testUser.Name, UserDB.GetUserById(1).Name);
         }
-
-        [Test]
-        public void Update_User_Success()
-        {
-            User testUser = new User
-            {
-                Id = 1,
-                Name = "Marko"
-            };
-            ClearUsers();
-            UserDB.CreateUser(testUser);
-            testUser.Name = "Petar";
-            UserDB.UpdateUser(testUser);
-            Assert.AreEqual(UserDB.GetUserById(1).Name, testUser.Name);
-        }
     }
 }
